@@ -5,4 +5,6 @@
 # include <stdlib.h>
 # include <unistd.h>
 
+int	check_arg(char **av);
+
 #endif

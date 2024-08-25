@@ -56,13 +56,11 @@ DEL = rm -rf
 
 AR = ar -rcs
 
-all: $(NAME)
+all: $(OBJ) $(OBJ_BONUS)
+	$(AR) $(NAME) $(OBJ) $(OBJ_BONUS)
 
 $(NAME): $(OBJ)
 	$(AR) $@ $(OBJ)
-
-bonus: $(OBJ) $(OBJ_BONUS)
-	$(AR) $(NAME) $(OBJ) $(OBJ_BONUS)
 
 %.o: %.c
 	$(CC) $(CFLAGS) -c $< -o $@
@@ -75,4 +73,4 @@ fclean: clean
 
 re: fclean all
 
-.PHONY: all clean fclean re bonus
+.PHONY: all clean fclean re
