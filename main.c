@@ -12,5 +12,7 @@ int	main(int ac, char **av)
 		ft_putstr_fd("Error", 2);
 		exit(1);
 	}
+	if (!create_stack(&a, av))
+		return(NULL);
     
 }

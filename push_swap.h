@@ -6,5 +6,6 @@
 # include <unistd.h>
 
 int	check_arg(char **av);
+long	ft_atol(const char *str);
 
 #endif
