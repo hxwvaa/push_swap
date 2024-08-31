@@ -1,18 +1,9 @@
 #include "push_swap.h"
 
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: hbasheer <hbasheer@student.42.fr>          +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/06/26 15:14:27 by hbasheer          #+#    #+#             */
-/*   Updated: 2024/06/27 18:53:05 by hbasheer         ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
-#include "libft.h"
+void del (void *content)
+{
+	free(content);
+}
 
 long	ft_atol(const char *str)
 {
@@ -33,9 +24,9 @@ long	ft_atol(const char *str)
 	{
 		nb = nb * 10 + *str - '0';
 		if (sign == -1 && nb >= LLONG_MAX)
-			return (0);
+			return (2147483649);
 		if (nb >= LLONG_MAX)
-			return (-1);
+			return (2147483649);
 		str++;
 	}
 	return (sign * nb);

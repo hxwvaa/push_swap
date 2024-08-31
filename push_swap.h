@@ -7,5 +7,7 @@
 
 int	check_arg(char **av);
 long	ft_atol(const char *str);
+int	create_stack(t_list **s, char **av);
+void del(void *content);
 
 #endif

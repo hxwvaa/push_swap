@@ -6,7 +6,7 @@
 /*   By: hbasheer <hbasheer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/26 15:16:27 by hbasheer          #+#    #+#             */
-/*   Updated: 2024/06/26 15:16:28 by hbasheer         ###   ########.fr       */
+/*   Updated: 2024/08/26 11:53:00 by hbasheer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 # include <limits.h>
 # include <stdio.h>
 # include <stdlib.h>
+# include <stdint.h>
 # include <unistd.h>
 
 typedef struct s_list
