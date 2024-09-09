@@ -1,6 +1,6 @@
 #include "push_swap.h"
 
-int	create_stack(t_list **s, char **av)
+void	create_stack(t_list **s, char **av)
 {
 	long n;
 	int i;
@@ -14,10 +14,55 @@ int	create_stack(t_list **s, char **av)
 		temp = ft_split(av[i], ' ');
 		n = atol(temp[0]);
 		if (n > INT_MAX || n < INT_MIN)
-			return (0);
+			ft_error();
 		ft_lstadd_back(s, ft_lstnew(n));
 		i++;
 		free(temp);
 	}
-	return(1);
+}
+
+
+void swap(t_list *a, t_list *b)
+{
+	int temp = a->content;
+	a->content = b->content;
+	b->content = temp;
+}
+
+void sort_clone(t_list *lst)
+{
+	t_list *temp = lst;
+	while (lst->next != NULL)
+	{
+		if(lst->content > lst->next->content)
+		{
+			swap(lst, lst->next);
+			lst = temp;
+		}
+		else
+			lst = lst->next;
+	}
+}
+
+
+void print_list(t_list *lst)
+{
+	while(lst)
+	{
+		printf("%d ", lst->content);
+		lst = lst->next;
+	}
+	printf("\n");
+}
+
+int main(void)
+{
+	t_list *s = ft_lstnew(4);
+	ft_lstadd_back(&s, ft_lstnew(5));
+	ft_lstadd_back(&s, ft_lstnew(3));
+	ft_lstadd_back(&s, ft_lstnew(8));
+	ft_lstadd_back(&s, ft_lstnew(9));
+	ft_lstadd_back(&s, ft_lstnew(0));
+	sort_stack(s);
+	print_list(s);
 }

@@ -1,8 +1,15 @@
 #include "push_swap.h"
 
-void del (void *content)
+void	del(void *content)
 {
 	free(content);
+}
+
+int	ft_isdigit(int i)
+{
+	if (i >= '0' && i <= '9')
+		return (1);
+	return (0);
 }
 
 long	ft_atol(const char *str)
@@ -32,7 +39,6 @@ long	ft_atol(const char *str)
 	return (sign * nb);
 }
 
-
 int	check_arg(char **av)
 {
 	int	i;
@@ -59,7 +65,28 @@ int	check_arg(char **av)
 	return (flag);
 }
 
-// int	main(int ac, char **av)
-// {
-// 	printf("%d", check_arg(av));
-// }
+void check_dup(t_list *s)
+{
+	while (s != NULL)
+	{
+		t_list *temp = s->next;
+		while (temp != NULL)
+		{
+			if (s->content == temp->content)
+				ft_error();
+			temp = temp->next;
+		}
+		s = s->next;
+	}
+}
+
+int main(void)
+{
+	t_list *s = ft_lstnew(4);
+	ft_lstadd_back(&s, ft_lstnew(5));
+	ft_lstadd_back(&s, ft_lstnew(3));
+	ft_lstadd_back(&s, ft_lstnew(8));
+	ft_lstadd_back(&s, ft_lstnew(9));
+	ft_lstadd_back(&s, ft_lstnew(0));
+	check_dup(s);
+}

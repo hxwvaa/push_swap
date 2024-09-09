@@ -14,17 +14,15 @@ int	main(int ac, char **av)
 {
 	t_list	*a;
 	t_list	*b;
+	t_list *clone;
 
 	if (ac == 1)
 		exit(1);
 	if (av[1] == NULL || !check_arg(av))
-	{
-		ft_putstr_fd("Error", 2);
-		exit(1);
-	}
-	if (!create_stack(&a, av))
-		exit(1);
-	ft_lstclear(&a, &del);
-	print_stack(a);
+		ft_error();
+	create_stack(&a, av);
+	check_dup(a);
+	create_stack(&clone, av);
+	sort_clone(clone);
 
 }
