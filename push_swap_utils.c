@@ -31,6 +31,8 @@ void swap(t_list *a, t_list *b)
 
 void sort_clone(t_list *lst)
 {
+	int i;
+
 	t_list *temp = lst;
 	while (lst->next != NULL)
 	{
@@ -42,6 +44,14 @@ void sort_clone(t_list *lst)
 		else
 			lst = lst->next;
 	}
+	lst = temp;
+	i = 0;
+	while(lst != NULL)
+	{
+		lst->index = i;
+		i++;
+		lst = lst->next;
+	}
 }
 
 
@@ -49,7 +59,7 @@ void print_list(t_list *lst)
 {
 	while(lst)
 	{
-		printf("%d ", lst->content);
+		printf("%d, %d \n", lst->content, lst->index);
 		lst = lst->next;
 	}
 	printf("\n");
@@ -63,6 +73,6 @@ int main(void)
 	ft_lstadd_back(&s, ft_lstnew(8));
 	ft_lstadd_back(&s, ft_lstnew(9));
 	ft_lstadd_back(&s, ft_lstnew(0));
-	sort_stack(s);
+	sort_clone(s);
 	print_list(s);
 }
