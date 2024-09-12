@@ -1,10 +1,5 @@
 #include "push_swap.h"
 
-void	del(void *content)
-{
-	free(content);
-}
-
 int	ft_isdigit(int i)
 {
 	if (i >= '0' && i <= '9')
