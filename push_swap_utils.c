@@ -68,7 +68,10 @@ void check_dup(t_list *s)
 		while (temp != NULL)
 		{
 			if (s->content == temp->content)
+			{
+				ft_free_array(s);
 				ft_error();
+			}
 			temp = temp->next;
 		}
 		s = s->next;

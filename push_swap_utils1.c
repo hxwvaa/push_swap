@@ -51,7 +51,10 @@ void	create_stack(t_list **s, char **av)
 	while (av[i])
 	{
 		if (!add_node(s, av[i]))
+		{
+			ft_free_array(*s);
 			ft_error();
+		}
 		i++;
 	}
 }

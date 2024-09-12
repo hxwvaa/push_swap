@@ -25,9 +25,14 @@ void pa(t_list **a, t_list **b)
 void ra(t_list **a)
 {
     t_list *temp;
+    t_list *first;
 
+    if (ft_lstsize(*a) == 1 || !*a)
+        return;
     temp = ft_lstlast(*a);
-    temp->next = *a;
-    *a = 
-
+    first = *a;
+    temp->next = first;
+    *a = first->next;
+    first->next = NULL;
+    write(1, "ra\n", 3);
 }
