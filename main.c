@@ -26,6 +26,6 @@ int	main(int ac, char **av)
 	sort_clone(clone);
 	set_index(); // stack_a and stack_clone
 	// create moves functions
-	sort(); // stack_a and stack_b || 2 numbers 3 numbers 4 numbers and 5 number sort and then radix sort
-	ft_free(); //free everything at the end
+	sort(); // stack_a and stack_b || 2 numbers, 3 numbers, 4 numbers and 5 number sort and then radix sort
+	//free everything at the end if needed
 }

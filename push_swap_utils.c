@@ -1,26 +1,60 @@
 #include "push_swap.h"
 
-void	create_stack(t_list **s, char **av)
+int check_only_space(char *str)
 {
-	long n;
 	int i;
-	char **temp;
-
-	i = 1;
-
-	*s = NULL;
-	while (av[i])
+	
+	i = 0;
+	while(str[i])
 	{
-		temp = ft_split(av[i], ' ');
-		n = atol(temp[0]);
-		if (n > INT_MAX || n < INT_MIN)
-			ft_error();
-		ft_lstadd_back(s, ft_lstnew(n));
-		i++;
-		free(temp);
+		if (str[i] == ' ')
+		{
+			i++;
+			if (str[i] == '\0')
+				return(0);
+		}
+		else
+			break;
 	}
+	return(1);
 }
 
+int	add_node(t_list **s, char *arg)
+{
+	int		j;
+	long	n;
+	char	**temp;
+
+	j = 0;
+	temp = ft_split(arg, ' ');
+	while (temp[j])
+	{
+		if (!check_only_space(temp[j]))
+			return(0);
+		if ((temp[j][0] == '-' || temp[j][0] == '+') && temp[j][1] == '\0')
+			return (0);
+		n = atol(temp[j]);
+		if (n > INT_MAX || n < INT_MIN)
+			return (0);
+		ft_lstadd_back(s, ft_lstnew(n));
+		j++;
+	}
+	free(temp);
+	return (1);
+}
+
+void	create_stack(t_list **s, char **av)
+{
+	int	i;
+
+	i = 1;
+	while (av[i])
+	{
+		if (!add_node(s, av[i]))
+			ft_error();
+		i++;
+	}
+}
 
 void swap(t_list *a, t_list *b)
 {
