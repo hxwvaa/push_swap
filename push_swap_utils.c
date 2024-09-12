@@ -89,24 +89,24 @@ void sort_clone(t_list *lst)
 }
 
 
-void print_list(t_list *lst)
-{
-	while(lst)
-	{
-		printf("%d, %d \n", lst->content, lst->index);
-		lst = lst->next;
-	}
-	printf("\n");
-}
+// void print_list(t_list *lst)
+// {
+// 	while(lst)
+// 	{
+// 		printf("%d, %d \n", lst->content, lst->index);
+// 		lst = lst->next;
+// 	}
+// 	printf("\n");
+// }
 
-int main(void)
-{
-	t_list *s = ft_lstnew(4);
-	ft_lstadd_back(&s, ft_lstnew(5));
-	ft_lstadd_back(&s, ft_lstnew(3));
-	ft_lstadd_back(&s, ft_lstnew(8));
-	ft_lstadd_back(&s, ft_lstnew(9));
-	ft_lstadd_back(&s, ft_lstnew(0));
-	sort_clone(s);
-	print_list(s);
-}
+// int main(void)
+// {
+// 	t_list *s = ft_lstnew(4);
+// 	ft_lstadd_back(&s, ft_lstnew(5));
+// 	ft_lstadd_back(&s, ft_lstnew(3));
+// 	ft_lstadd_back(&s, ft_lstnew(8));
+// 	ft_lstadd_back(&s, ft_lstnew(9));
+// 	ft_lstadd_back(&s, ft_lstnew(0));
+// 	sort_clone(s);
+// 	print_list(s);
+// }

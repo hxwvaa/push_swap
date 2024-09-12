@@ -17,7 +17,6 @@ typedef struct s_list
 int					check_arg(char **av);
 long				ft_atol(const char *str);
 void					create_stack(t_list **s, char **av);
-void				del(void *content);
 void				ft_error(void);
 t_list				*ft_lstlast(t_list *lst);
 t_list				*ft_lstnew(int content);

@@ -75,13 +75,13 @@ void check_dup(t_list *s)
 	}
 }
 
-int main(void)
-{
-	t_list *s = ft_lstnew(4);
-	ft_lstadd_back(&s, ft_lstnew(5));
-	ft_lstadd_back(&s, ft_lstnew(3));
-	ft_lstadd_back(&s, ft_lstnew(8));
-	ft_lstadd_back(&s, ft_lstnew(9));
-	ft_lstadd_back(&s, ft_lstnew(0));
-	check_dup(s);
-}
+// int main(void)
+// {
+// 	t_list *s = ft_lstnew(4);
+// 	ft_lstadd_back(&s, ft_lstnew(5));
+// 	ft_lstadd_back(&s, ft_lstnew(3));
+// 	ft_lstadd_back(&s, ft_lstnew(8));
+// 	ft_lstadd_back(&s, ft_lstnew(9));
+// 	ft_lstadd_back(&s, ft_lstnew(0));
+// 	check_dup(s);
+// }
