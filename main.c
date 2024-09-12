@@ -24,7 +24,8 @@ int	main(int ac, char **av)
 	check_dup(a);
 	create_stack(&clone, av);
 	sort_clone(clone);
-	set_index(); // stack_a and stack_clone
+	sorted(a, clone); //check if stack is sorted
+	set_index(a, clone); // stack_a and stack_clone
 	// create moves functions
 	sort(); // stack_a and stack_b || 2 numbers, 3 numbers, 4 numbers and 5 number sort and then radix sort
 	//free everything at the end if needed

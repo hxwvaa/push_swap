@@ -1,103 +1,79 @@
 #include "push_swap.h"
 
-int check_only_space(char *str)
+int	ft_isdigit(int i)
 {
-	int i;
-	
-	i = 0;
-	while(str[i])
-	{
-		if (str[i] == ' ')
-		{
-			i++;
-			if (str[i] == '\0')
-				return(0);
-		}
-		else
-			break;
-	}
-	return(1);
+	if (i >= '0' && i <= '9')
+		return (1);
+	return (0);
 }
 
-int	add_node(t_list **s, char *arg)
+long	ft_atol(const char *str)
 {
-	int		j;
-	long	n;
-	char	**temp;
+	unsigned long long	nb;
+	int					sign;
 
-	j = 0;
-	temp = ft_split(arg, ' ');
-	while (temp[j])
+	sign = 1;
+	nb = 0;
+	while (*str == ' ' || (*str >= '\t' && *str <= '\r'))
+		str++;
+	if (*str == '-' || *str == '+')
 	{
-		if (!check_only_space(temp[j]))
-			return(0);
-		if ((temp[j][0] == '-' || temp[j][0] == '+') && temp[j][1] == '\0')
-			return (0);
-		n = atol(temp[j]);
-		if (n > INT_MAX || n < INT_MIN)
-			return (0);
-		ft_lstadd_back(s, ft_lstnew(n));
-		j++;
+		if (*str == '-')
+			sign *= -1;
+		str++;
 	}
-	free(temp);
-	return (1);
+	while (*str >= '0' && *str <= '9')
+	{
+		nb = nb * 10 + *str - '0';
+		if (sign == -1 && nb >= LLONG_MAX)
+			return (2147483649);
+		if (nb >= LLONG_MAX)
+			return (2147483649);
+		str++;
+	}
+	return (sign * nb);
 }
 
-void	create_stack(t_list **s, char **av)
+int	check_arg(char **av)
 {
 	int	i;
+	int	j;
+	int	flag;
 
 	i = 1;
+	flag = 0;
 	while (av[i])
 	{
-		if (!add_node(s, av[i]))
-			ft_error();
-		i++;
-	}
-}
-
-void swap(t_list *a, t_list *b)
-{
-	int temp = a->content;
-	a->content = b->content;
-	b->content = temp;
-}
-
-void sort_clone(t_list *lst)
-{
-	int i;
-
-	t_list *temp = lst;
-	while (lst->next != NULL)
-	{
-		if(lst->content > lst->next->content)
+		j = 0;
+		while (av[i][j])
 		{
-			swap(lst, lst->next);
-			lst = temp;
+			if (ft_isdigit(av[i][j]) || (av[i][j] == '-' && (av[i][j - 1] == ' '
+						|| j == 0)) || (av[i][j] == '+' && (av[i][j - 1] == ' '
+						|| j == 0)) || av[i][j] == ' ')
+				flag = 1;
+			else
+				return (0);
+			j++;
 		}
-		else
-			lst = lst->next;
-	}
-	lst = temp;
-	i = 0;
-	while(lst != NULL)
-	{
-		lst->index = i;
 		i++;
-		lst = lst->next;
 	}
+	return (flag);
 }
 
-
-// void print_list(t_list *lst)
-// {
-// 	while(lst)
-// 	{
-// 		printf("%d, %d \n", lst->content, lst->index);
-// 		lst = lst->next;
-// 	}
-// 	printf("\n");
-// }
+void check_dup(t_list *s)
+{
+	while (s != NULL)
+	{
+		t_list *temp = s->next;
+		while (temp != NULL)
+		{
+			if (s->content == temp->content)
+				ft_error();
+			temp = temp->next;
+		}
+		s = s->next;
+	}
+}
 
 // int main(void)
 // {
@@ -107,6 +83,5 @@ void sort_clone(t_list *lst)
 // 	ft_lstadd_back(&s, ft_lstnew(8));
 // 	ft_lstadd_back(&s, ft_lstnew(9));
 // 	ft_lstadd_back(&s, ft_lstnew(0));
-// 	sort_clone(s);
-// 	print_list(s);
+// 	check_dup(s);
 // }
