@@ -37,17 +37,17 @@ void radix(t_list *a, t_list *b)
 
 void sort(t_list *a, t_list *b)
 {
-    int size;
+    // int size;
 
-    size = ft_lstsize(a);
-    if (size == 2)
-        two_sort();
-    else if (size == 3)
-        three_sort();
-    else if (size == 4)
-        four_sort();
-    else if (size == 5)
-        five_sort();
-    else
-        radix_sort();
+    // size = ft_lstsize(a);
+    // if (size == 2)
+    //     two_sort();
+    // else if (size == 3)
+    //     three_sort();
+    // else if (size == 4)
+    //     four_sort();
+    // else if (size == 5)
+    //     five_sort();
+    // else
+    radix(a, b);
 }

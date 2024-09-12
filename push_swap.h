@@ -31,10 +31,13 @@ void				swap(t_list *a, t_list *b);
 void				set_index(t_list *a, t_list *c);
 void				ft_lstadd_front(t_list **lst, t_list *new);
 int	ft_lstsize(t_list *lst);
+void sorted(t_list *a, t_list *c);
+void sort_clone(t_list *lst);
 void ft_free_array(t_list *lst);
 void ra(t_list **a);
 void pa(t_list **a, t_list **b);
 void pb(t_list **a, t_list **b);
+void sort(t_list *a, t_list *b);
 
 
 

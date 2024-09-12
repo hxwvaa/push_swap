@@ -16,6 +16,7 @@ int	main(int ac, char **av)
 	t_list	*b;
 	t_list *clone;
 
+	b = NULL;
 	if (ac == 1)
 		exit(1);
 	if (av[1] == NULL || !check_arg(av))
@@ -26,7 +27,6 @@ int	main(int ac, char **av)
 	sort_clone(clone);
 	sorted(a, clone); //check if stack is sorted
 	set_index(a, clone); // stack_a and stack_clone
-	// create moves functions
-	sort(); // stack_a and stack_b || 2 numbers, 3 numbers, 4 numbers and 5 number sort and then radix sort
+	sort(a, b); // stack_a and stack_b || 2 numbers, 3 numbers, 4 numbers and 5 number sort and then radix sort
 	//free everything at the end if needed
 }
