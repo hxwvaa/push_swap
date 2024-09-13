@@ -40,7 +40,7 @@ void sort(t_list *a, t_list *b)
 
     size = ft_lstsize(a);
     if (size == 2)
-        two_sort(a, b, size);
+        sa(&a);
     else if (size == 3)
         three_sort(a, b, size);
     else if (size == 4)

@@ -52,3 +52,8 @@ void sa(t_list **a)
     (*a)->next = temp;
     temp->next = NULL;
 }
+
+void rra(t_list **a)
+{
+    
+}
