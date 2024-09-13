@@ -4,6 +4,8 @@ void pb(t_list **a, t_list **b)
 {
     t_list *temp;
 
+    if (!a || !*a)
+    return;
     temp = *a;
     ft_lstadd_front(b, ft_lstnew(temp->content, temp->index));
     *a = temp->next;
@@ -15,6 +17,8 @@ void pa(t_list **a, t_list **b)
 {
     t_list *temp;
 
+    if (!b || !*b)
+        return;
     temp = *b;
     ft_lstadd_front(a, ft_lstnew(temp->content, temp->index));
     *b = temp->next;
@@ -35,4 +39,16 @@ void ra(t_list **a)
     *a = first->next;
     first->next = NULL;
     write(1, "ra\n", 3);
+}
+
+void sa(t_list **a)
+{
+    t_list *temp;
+
+    if(ft_lstsize(*a) == 1 || !*a)
+        return;
+    temp = *a;
+    *a = temp->next;
+    (*a)->next = temp;
+    temp->next = NULL;
 }

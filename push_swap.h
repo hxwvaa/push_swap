@@ -38,6 +38,7 @@ void ra(t_list **a);
 void pa(t_list **a, t_list **b);
 void pb(t_list **a, t_list **b);
 void sort(t_list *a, t_list *b);
+void sa(t_list **a);
 
 
 
