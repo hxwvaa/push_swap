@@ -16,6 +16,8 @@ int	main(int ac, char **av)
 	t_list	*b;
 	t_list *clone;
 
+	clone = NULL;
+	a = NULL;
 	b = NULL;
 	if (ac == 1)
 		exit(1);
@@ -23,10 +25,13 @@ int	main(int ac, char **av)
 		ft_error();
 	create_stack(&a, av);
 	check_dup(a);
+	printf("!\n");
 	create_stack(&clone, av);
 	sort_clone(clone);
-	sorted(a, clone); //check if stack is sorted
-	set_index(a, clone); // stack_a and stack_clone
-	sort(a, b); // stack_a and stack_b || 2 numbers, 3 numbers, 4 numbers and 5 number sort and then radix sort
-	//free everything at the end if needed
+	sorted(a, clone);
+	set_index(a, clone);
+	ft_free_array(clone);
+	sort(a, b);
+	ft_free_array(a);
+	ft_free_array(b);
 }

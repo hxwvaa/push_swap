@@ -6,6 +6,18 @@ int	ft_isdigit(int i)
 		return (1);
 	return (0);
 }
+void	free_split(char **str_arr)
+{
+	int	i;
+
+	i = 0;
+	while (str_arr[i] != NULL)
+	{
+		free(str_arr[i]);
+		i++;
+	}
+	free(str_arr);
+}
 
 long	ft_atol(const char *str)
 {

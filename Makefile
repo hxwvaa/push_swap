@@ -2,7 +2,7 @@ NAME = push_swap
 
 SRCS = ft_bzero.c ft_lst.c ft_split.c moves.c push_swap_utils.c \
        push_swap_utils2.c error.c ft_calloc.c ft_memcpy.c main.c \
-       push_swap_utils1.c radix_sort.c sort.c
+       push_swap_utils1.c radix_sort.c other_sort.c
 
 OBJS = $(SRCS:.c=.o)
 

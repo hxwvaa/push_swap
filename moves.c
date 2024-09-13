@@ -51,9 +51,20 @@ void sa(t_list **a)
     *a = temp->next;
     (*a)->next = temp;
     temp->next = NULL;
+    write(1, "sa\n", 3);
 }
 
 void rra(t_list **a)
 {
-    
+    t_list *temp;
+    t_list *last;
+
+    temp = *a;
+    last = ft_lstlast(*a);
+    while(temp->next != last)
+        temp = temp->next;
+    temp->next = NULL;
+    last->next = *a;
+    *a = last;
+    write(1, "rra\n", 4);
 }

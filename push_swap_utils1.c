@@ -30,16 +30,16 @@ int	add_node(t_list **s, char *arg)
 	while (temp[j])
 	{
 		if (!check_only_space(temp[j]))
-			return(0);
+			return(free_split(temp), 0);
 		if ((temp[j][0] == '-' || temp[j][0] == '+') && temp[j][1] == '\0')
-			return (0);
-		n = atol(temp[j]);
+			return(free_split(temp), 0);
+		n = ft_atol(temp[j]);
 		if (n > INT_MAX || n < INT_MIN)
-			return (0);
-		ft_lstadd_back(s, ft_lstnew(n, 0));
+			return(free_split(temp), 0);
+		ft_lstadd_back(s, ft_lstnew((int)n, 0));
 		j++;
 	}
-	free(temp);
+	free_split(temp);
 	return (1);
 }
 
