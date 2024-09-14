@@ -23,6 +23,11 @@ void set_index(t_list *a, t_list *c)
 
 void sorted(t_list *a, t_list *c)
 {
+    t_list *temp;
+    t_list *temp1;
+
+    temp = a;
+    temp1 = c;
     while(a != NULL)
     {
         if (c->content == a->content)
@@ -33,5 +38,7 @@ void sorted(t_list *a, t_list *c)
         else
             return;
     }
+    ft_free_array(temp);
+    ft_free_array(temp1);
     exit(1);
 }

@@ -1,24 +1,5 @@
 #include "push_swap.h"
 
-int check_only_space(char *str)
-{
-	int i;
-	
-	i = 0;
-	while(str[i])
-	{
-		if (str[i] == ' ')
-		{
-			i++;
-			if (str[i] == '\0')
-				return(0);
-		}
-		else
-			break;
-	}
-	return(1);
-}
-
 int	add_node(t_list **s, char *arg)
 {
 	int		j;
@@ -27,16 +8,16 @@ int	add_node(t_list **s, char *arg)
 
 	j = 0;
 	temp = ft_split(arg, ' ');
+	if(!temp)
+		return(0);
 	while (temp[j])
 	{
-		if (!check_only_space(temp[j]))
-			return(free_split(temp), 0);
 		if ((temp[j][0] == '-' || temp[j][0] == '+') && temp[j][1] == '\0')
 			return(free_split(temp), 0);
 		n = ft_atol(temp[j]);
 		if (n > INT_MAX || n < INT_MIN)
 			return(free_split(temp), 0);
-		ft_lstadd_back(s, ft_lstnew((int)n, 0));
+		ft_lstadd_back(s, ft_lstnew(n, 0));
 		j++;
 	}
 	free_split(temp);
@@ -46,13 +27,15 @@ int	add_node(t_list **s, char *arg)
 void	create_stack(t_list **s, char **av)
 {
 	int	i;
+	t_list *orig_s;
 
 	i = 1;
+	orig_s = *s;
 	while (av[i])
 	{
 		if (!add_node(s, av[i]))
 		{
-			ft_free_array(*s);
+			ft_free_array(orig_s);
 			ft_error();
 		}
 		i++;
@@ -70,6 +53,8 @@ void sort_clone(t_list *lst)
 {
 	int i;
 
+	if (!lst)
+		exit(1);
 	t_list *temp = lst;
 	while (lst->next != NULL)
 	{

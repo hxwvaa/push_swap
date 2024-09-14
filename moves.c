@@ -4,12 +4,20 @@ void pb(t_list **a, t_list **b)
 {
     t_list *temp;
 
-    if (!a || !*a)
-    return;
-    temp = *a;
-    ft_lstadd_front(b, ft_lstnew(temp->content, temp->index));
-    *a = temp->next;
-    free(temp);
+    if(*a == NULL)
+        return;
+    temp = (*a);
+    (*a) = temp->next;
+    if((*b) == NULL)
+    {
+        temp->next = NULL;
+        (*b) = temp;
+    }
+    else
+    {
+        temp->next = *b;
+        *b = temp;
+    }
     write(1, "pb\n", 3);
 }
 
@@ -17,12 +25,20 @@ void pa(t_list **a, t_list **b)
 {
     t_list *temp;
 
-    if (!b || !*b)
+    if(*b == NULL)
         return;
-    temp = *b;
-    ft_lstadd_front(a, ft_lstnew(temp->content, temp->index));
-    *b = temp->next;
-    free(temp);
+    temp = (*b);
+    (*b) = temp->next;
+    if((*a) == NULL)
+    {
+        temp->next = NULL;
+        (*a) = temp;
+    }
+    else
+    {
+        temp->next = *a;
+        *a = temp;
+    }
     write(1, "pa\n", 3);
 }
 

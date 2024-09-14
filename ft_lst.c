@@ -17,7 +17,7 @@ t_list	*ft_lstnew(int content, int index)
 	t_list	*list;
 
 	list = malloc(sizeof(t_list));
-	if (list == NULL)
+	if (!list)
 		return (NULL);
 	list->content = content;
 	list->index = index;

@@ -74,6 +74,9 @@ int	check_arg(char **av)
 
 void check_dup(t_list *s)
 {
+	t_list *orig;
+
+	orig = s;
 	while (s != NULL)
 	{
 		t_list *temp = s->next;
@@ -81,7 +84,7 @@ void check_dup(t_list *s)
 		{
 			if (s->content == temp->content)
 			{
-				ft_free_array(s);
+				ft_free_array(orig);
 				ft_error();
 			}
 			temp = temp->next;

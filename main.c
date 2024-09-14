@@ -15,7 +15,7 @@ int	main(int ac, char **av)
 	t_list	*a;
 	t_list	*b;
 	t_list *clone;
-
+	
 	clone = NULL;
 	a = NULL;
 	b = NULL;
@@ -25,7 +25,6 @@ int	main(int ac, char **av)
 		ft_error();
 	create_stack(&a, av);
 	check_dup(a);
-	printf("!\n");
 	create_stack(&clone, av);
 	sort_clone(clone);
 	sorted(a, clone);
@@ -33,5 +32,4 @@ int	main(int ac, char **av)
 	ft_free_array(clone);
 	sort(a, b);
 	ft_free_array(a);
-	ft_free_array(b);
 }
