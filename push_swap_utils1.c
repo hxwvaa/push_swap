@@ -8,7 +8,7 @@ int	add_node(t_list **s, char *arg)
 
 	j = 0;
 	temp = ft_split(arg, ' ');
-	if(!temp)
+	if(!temp || !(temp[0]))
 		return(0);
 	while (temp[j])
 	{

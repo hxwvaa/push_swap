@@ -14,7 +14,7 @@ void ft_free_array(t_list *lst)
 
 void ft_error(void)
 {
-    write(2, "Error", 5);
+    write(2, "Error\n", 6);
     exit(1);
 }
 

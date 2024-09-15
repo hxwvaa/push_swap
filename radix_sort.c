@@ -6,7 +6,7 @@ void push_back(t_list **a, t_list **b)
         pa(a, b);
 }
 
-void radix(t_list *a, t_list *b, int size)
+void radix(t_list **a, t_list **b, int size)
 {
     int max_len;
     int bit_len;
@@ -23,13 +23,13 @@ void radix(t_list *a, t_list *b, int size)
         j = 0;
         while(j < size)
         {
-            if ((a->index >> i) & 1)
-                ra(&a);
+            if (((*a)->index >> i) & 1)
+                ra(a);
             else
-                pb(&a, &b);
+                pb(a, b);
             j++;
         }
-        push_back(&a, &b);
+        push_back(a, b);
         i++;
     }
 }

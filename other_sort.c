@@ -1,34 +1,34 @@
 #include "push_swap.h"
 
-void	three_sort(t_list *a, t_list *b)
+void	three_sort(t_list **a, t_list **b)
 {
 	int	first;
 	int	second;
 	int	third;
 
-	first = a->index;
-	second = a->next->index;
-	third = a->next->next->index;
+	first = (*a)->index;
+	second = (*a)->next->index;
+	third = (*a)->next->next->index;
 	if (first < second && first < third)
 	{
-		pb(&a, &b);
-		sa(&a);
-		pa(&a, &b);
+		pb(a, b);
+		sa(a);
+		pa(a, b);
 	}
 	else if (first > second && first < third)
-		sa(&a);
+		sa(a);
     else if (first < second && first > third)
-		rra(&a);
+		rra(a);
     else if (second < first && second > third)
     {
-        ra(&a);
-        sa(&a);
+        ra(a);
+        sa(a);
     }
     else if(first > second && first > third)
-        ra(&a);
+        ra(a);
 }
 
-void	four_sort(t_list *a, t_list *b)
+void	four_sort(t_list **a, t_list **b)
 {
 	int i;
 
@@ -36,20 +36,20 @@ void	four_sort(t_list *a, t_list *b)
 
 	while (i < 4)
 	{
-		if (a->index == 0)
+		if ((*a)->index == 0)
 		{
-			pb(&a, &b);
+			pb(a, b);
 			break;
 		}
 		else
-			ra(&a);
+			ra(a);
 		i++;
 	}
 	three_sort(a, b);
-	pa(&a, &b);
+	pa(a, b);
 }
 
-void	five_sort(t_list *a, t_list *b)
+void	five_sort(t_list **a, t_list **b)
 {
 	int i;
 
@@ -57,18 +57,18 @@ void	five_sort(t_list *a, t_list *b)
 
 	while(i < 5)
 	{
-		if (a->index == 4)
+		if ((*a)->index == 4)
 		{
-			pb(&a, &b);
+			pb(a, b);
 			break;
 		}
 		else
-			ra(&a);
+			ra(a);
 		i++;
 	}
 	four_sort(a, b);
-	pa(&a, &b);
-	ra(&a);
+	pa(a, b);
+	ra(a);
 }
 
 void sort(t_list *a, t_list *b)
@@ -79,11 +79,14 @@ void sort(t_list *a, t_list *b)
     if (size == 2)
         sa(&a);
     else if (size == 3)
-        three_sort(a, b);
+        three_sort(&a, &b);
     else if (size == 4)
-        four_sort(a, b);
+        four_sort(&a, &b);
     else if (size == 5)
-        five_sort(a, b);
+        five_sort(&a, &b);
     else
-        radix(a, b, size);
+	{
+        radix(&a, &b, size);
+	}
+	ft_free_array(a);
 }

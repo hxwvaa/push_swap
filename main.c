@@ -31,5 +31,4 @@ int	main(int ac, char **av)
 	set_index(a, clone);
 	ft_free_array(clone);
 	sort(a, b);
-	ft_free_array(a);
 }

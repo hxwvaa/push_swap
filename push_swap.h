@@ -42,10 +42,10 @@ void				sa(t_list **a);
 void				rra(t_list **a);
 
 void				sort(t_list *a, t_list *b);
-void				three_sort(t_list *a, t_list *b);
-void				four_sort(t_list *a, t_list *b);
-void				five_sort(t_list *a, t_list *b);
-void				radix(t_list *a, t_list *b, int size);
+void				three_sort(t_list **a, t_list **b);
+void				four_sort(t_list **a, t_list **b);
+void				five_sort(t_list **a, t_list **b);
+void				radix(t_list **a, t_list **b, int size);
 void				free_split(char **str_arr);
 
 #endif
