@@ -9,7 +9,7 @@ int	add_node(t_list **s, char *arg)
 	j = 0;
 	temp = ft_split(arg, ' ');
 	if(!temp || !(temp[0]))
-		return(0);
+		return(free_split(temp), 0);
 	while (temp[j])
 	{
 		if ((temp[j][0] == '-' || temp[j][0] == '+') && temp[j][1] == '\0')
@@ -27,15 +27,13 @@ int	add_node(t_list **s, char *arg)
 void	create_stack(t_list **s, char **av)
 {
 	int	i;
-	t_list *orig_s;
 
 	i = 1;
-	orig_s = *s;
 	while (av[i])
 	{
 		if (!add_node(s, av[i]))
 		{
-			ft_free_array(orig_s);
+			ft_free_array(*s);
 			ft_error();
 		}
 		i++;
@@ -75,26 +73,3 @@ void sort_clone(t_list *lst)
 		lst = lst->next;
 	}
 }
-
-
-// void print_list(t_list *lst)
-// {
-// 	while(lst)
-// 	{
-// 		printf("%d, %d \n", lst->content, lst->index);
-// 		lst = lst->next;
-// 	}
-// 	printf("\n");
-// }
-
-// int main(void)
-// {
-// 	t_list *s = ft_lstnew(4);
-// 	ft_lstadd_back(&s, ft_lstnew(5));
-// 	ft_lstadd_back(&s, ft_lstnew(3));
-// 	ft_lstadd_back(&s, ft_lstnew(8));
-// 	ft_lstadd_back(&s, ft_lstnew(9));
-// 	ft_lstadd_back(&s, ft_lstnew(0));
-// 	sort_clone(s);
-// 	print_list(s);
-// }

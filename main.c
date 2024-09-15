@@ -1,15 +1,5 @@
 #include "push_swap.h"
 
-// void print_stack(t_list *lst)
-// {
-// 	while (lst != NULL)
-// 	{
-// 		printf("%d, ", lst->content);
-// 		lst = lst->next;
-// 	}
-// }
-
-
 int	main(int ac, char **av)
 {
 	t_list	*a;
