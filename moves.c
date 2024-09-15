@@ -51,12 +51,12 @@ void sa(t_list **a)
 {
     t_list *temp;
 
-    if(ft_lstsize(*a) == 1 || !*a)
+    if(ft_lstsize(*a) < 2 || !*a)
         return;
     temp = *a;
-    *a = temp->next;
+    *a = (*a)->next;
+    temp->next = (*a)->next;
     (*a)->next = temp;
-    temp->next = NULL;
     write(1, "sa\n", 3);
 }
 
