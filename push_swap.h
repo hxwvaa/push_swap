@@ -15,25 +15,28 @@ typedef struct s_list
 }					t_list;
 
 int					check_arg(char **av);
+void				check_dup(t_list *s);
 long				ft_atol(const char *str);
-void				create_stack(t_list **s, char **av);
+int					ft_isdigit(int i);
 void				ft_error(void);
+void				create_stack(t_list **s, char **av);
+void				ft_free_array(t_list *lst);
+
+void				ft_lstadd_front(t_list **lst, t_list *new);
+int					ft_lstsize(t_list *lst);
 t_list				*ft_lstlast(t_list *lst);
 t_list				*ft_lstnew(int content, int index);
 void				ft_lstadd_back(t_list **lst, t_list *new);
-void				check_dup(t_list *s);
+
 char				**ft_split(char const *s, char c);
-int					ft_isdigit(int i);
 void				*ft_calloc(size_t nmemb, size_t size);
 void				*ft_memcpy(void *dest, const void *src, size_t n);
 void				ft_bzero(void *s, size_t n);
-void				swap(t_list *a, t_list *b);
+
 void				set_index(t_list *a, t_list *c);
-void				ft_lstadd_front(t_list **lst, t_list *new);
-int					ft_lstsize(t_list *lst);
+void				swap(t_list *a, t_list *b);
 void				sorted(t_list *a, t_list *c);
 void				sort_clone(t_list *lst);
-void				ft_free_array(t_list *lst);
 
 void				ra(t_list **a);
 void				pa(t_list **a, t_list **b);

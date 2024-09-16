@@ -4,8 +4,8 @@ int	main(int ac, char **av)
 {
 	t_list	*a;
 	t_list	*b;
-	t_list *clone;
-	
+	t_list	*clone;
+
 	clone = NULL;
 	a = NULL;
 	b = NULL;

@@ -6,6 +6,7 @@ int	ft_isdigit(int i)
 		return (1);
 	return (0);
 }
+
 void	free_split(char **str_arr)
 {
 	int	i;
@@ -72,14 +73,15 @@ int	check_arg(char **av)
 	return (flag);
 }
 
-void check_dup(t_list *s)
+void	check_dup(t_list *s)
 {
-	t_list *orig;
+	t_list	*orig;
+	t_list	*temp;
 
 	orig = s;
 	while (s != NULL)
 	{
-		t_list *temp = s->next;
+		temp = s->next;
 		while (temp != NULL)
 		{
 			if (s->content == temp->content)
@@ -92,14 +94,3 @@ void check_dup(t_list *s)
 		s = s->next;
 	}
 }
-
-// int main(void)
-// {
-// 	t_list *s = ft_lstnew(4);
-// 	ft_lstadd_back(&s, ft_lstnew(5));
-// 	ft_lstadd_back(&s, ft_lstnew(3));
-// 	ft_lstadd_back(&s, ft_lstnew(8));
-// 	ft_lstadd_back(&s, ft_lstnew(9));
-// 	ft_lstadd_back(&s, ft_lstnew(0));
-// 	check_dup(s);
-// }
