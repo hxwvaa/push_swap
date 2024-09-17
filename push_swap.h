@@ -6,7 +6,7 @@
 /*   By: hbasheer <hbasheer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/17 16:39:00 by hbasheer          #+#    #+#             */
-/*   Updated: 2024/09/17 16:39:01 by hbasheer         ###   ########.fr       */
+/*   Updated: 2024/09/17 19:04:38 by hbasheer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,7 +57,7 @@ void				sa(t_list **a);
 void				rra(t_list **a);
 
 void				sort(t_list *a, t_list *b);
-void				three_sort(t_list **a, t_list **b);
+void				three_sort(t_list **a);
 void				four_sort(t_list **a, t_list **b);
 void				five_sort(t_list **a, t_list **b);
 void				radix(t_list **a, t_list **b, int size);
