@@ -6,11 +6,13 @@
 /*   By: hbasheer <hbasheer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/17 16:39:17 by hbasheer          #+#    #+#             */
-/*   Updated: 2024/09/17 19:05:28 by hbasheer         ###   ########.fr       */
+/*   Updated: 2024/09/18 11:04:35 by hbasheer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+
 
 int	main(int ac, char **av)
 {
