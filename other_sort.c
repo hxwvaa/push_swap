@@ -6,25 +6,25 @@
 /*   By: hbasheer <hbasheer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/17 16:39:10 by hbasheer          #+#    #+#             */
-/*   Updated: 2024/09/18 11:06:26 by hbasheer         ###   ########.fr       */
+/*   Updated: 2024/09/18 11:13:22 by hbasheer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int find_pos(t_list *a, int n)
+int	find_pos(t_list *a, int n)
 {
-	int i;
+	int	i;
 
 	i = 0;
-	while(a != NULL)
+	while (a != NULL)
 	{
-		if(a->index == n)
-			return(i);
+		if (a->index == n)
+			return (i);
 		a = a->next;
 		i++;
 	}
-	return(i);
+	return (i);
 }
 
 void	three_sort(t_list **a)
@@ -56,18 +56,18 @@ void	three_sort(t_list **a)
 
 void	four_sort(t_list **a, t_list **b)
 {
-	int pos;
+	int	pos;
 
 	pos = find_pos(*a, 3);
-	if (pos <= 4/2)
+	if (pos <= 4 / 2)
 	{
-		while((*a)->index != 3)
+		while ((*a)->index != 3)
 			ra(a);
 	}
 	else
 	{
-		while((*a)->index != 3)
-			rra(a);		
+		while ((*a)->index != 3)
+			rra(a);
 	}
 	pb(a, b);
 	three_sort(a);
@@ -77,18 +77,18 @@ void	four_sort(t_list **a, t_list **b)
 
 void	five_sort(t_list **a, t_list **b)
 {
-	int pos;
+	int	pos;
 
 	pos = find_pos(*a, 4);
-	if (pos <= 5/2)
+	if (pos <= 5 / 2)
 	{
-		while((*a)->index != 4)
+		while ((*a)->index != 4)
 			ra(a);
 	}
 	else
 	{
-		while((*a)->index != 4)
-			rra(a);		
+		while ((*a)->index != 4)
+			rra(a);
 	}
 	pb(a, b);
 	four_sort(a, b);
