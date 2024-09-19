@@ -6,7 +6,7 @@
 /*   By: hbasheer <hbasheer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/17 16:39:06 by hbasheer          #+#    #+#             */
-/*   Updated: 2024/09/17 16:39:07 by hbasheer         ###   ########.fr       */
+/*   Updated: 2024/09/19 13:53:24 by hbasheer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,10 +35,12 @@ void	free_split(char **str_arr)
 long	ft_atol(const char *str)
 {
 	unsigned long long	nb;
+	int i;
 	int					sign;
 
 	sign = 1;
 	nb = 0;
+	i = 0;
 	while (*str == ' ' || (*str >= '\t' && *str <= '\r'))
 		str++;
 	if (*str == '-' || *str == '+')
@@ -47,13 +49,13 @@ long	ft_atol(const char *str)
 			sign *= -1;
 		str++;
 	}
+	while(str[i] >= '0' && str[i] <= '9')
+		i++;
+	if (i > 10)
+		return(2147483649);
 	while (*str >= '0' && *str <= '9')
 	{
 		nb = nb * 10 + *str - '0';
-		if (sign == -1 && nb >= LLONG_MAX)
-			return (2147483649);
-		if (nb >= LLONG_MAX)
-			return (2147483649);
 		str++;
 	}
 	return (sign * nb);
