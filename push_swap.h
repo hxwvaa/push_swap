@@ -6,7 +6,7 @@
 /*   By: hbasheer <hbasheer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/17 16:39:00 by hbasheer          #+#    #+#             */
-/*   Updated: 2024/09/17 19:04:38 by hbasheer         ###   ########.fr       */
+/*   Updated: 2024/09/20 15:11:36 by hbasheer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ long				ft_atol(const char *str);
 int					ft_isdigit(int i);
 void				ft_error(void);
 void				create_stack(t_list **s, char **av);
-void				ft_free_array(t_list *lst);
+void				ft_free_stack(t_list *lst);
 
 void				ft_lstadd_front(t_list **lst, t_list *new);
 int					ft_lstsize(t_list *lst);
@@ -44,6 +44,7 @@ char				**ft_split(char const *s, char c);
 void				*ft_calloc(size_t nmemb, size_t size);
 void				*ft_memcpy(void *dest, const void *src, size_t n);
 void				ft_bzero(void *s, size_t n);
+void				free_split(char **str_arr);
 
 void				set_index(t_list *a, t_list *c);
 void				swap(t_list *a, t_list *b);
@@ -61,6 +62,5 @@ void				three_sort(t_list **a);
 void				four_sort(t_list **a, t_list **b);
 void				five_sort(t_list **a, t_list **b);
 void				radix(t_list **a, t_list **b, int size);
-void				free_split(char **str_arr);
 
 #endif

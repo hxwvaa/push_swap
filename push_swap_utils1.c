@@ -6,7 +6,7 @@
 /*   By: hbasheer <hbasheer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/17 16:38:44 by hbasheer          #+#    #+#             */
-/*   Updated: 2024/09/19 13:49:29 by hbasheer         ###   ########.fr       */
+/*   Updated: 2024/09/20 15:04:59 by hbasheer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ void	create_stack(t_list **s, char **av)
 	{
 		if (!add_node(s, av[i]))
 		{
-			ft_free_array(*s);
+			ft_free_stack(*s);
 			ft_error();
 		}
 		i++;

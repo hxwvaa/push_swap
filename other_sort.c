@@ -6,7 +6,7 @@
 /*   By: hbasheer <hbasheer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/17 16:39:10 by hbasheer          #+#    #+#             */
-/*   Updated: 2024/09/18 11:13:22 by hbasheer         ###   ########.fr       */
+/*   Updated: 2024/09/20 14:57:21 by hbasheer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -113,5 +113,5 @@ void	sort(t_list *a, t_list *b)
 	{
 		radix(&a, &b, size);
 	}
-	ft_free_array(a);
+	ft_free_stack(a);
 }

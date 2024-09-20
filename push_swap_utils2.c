@@ -6,7 +6,7 @@
 /*   By: hbasheer <hbasheer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/17 16:38:56 by hbasheer          #+#    #+#             */
-/*   Updated: 2024/09/17 16:38:57 by hbasheer         ###   ########.fr       */
+/*   Updated: 2024/09/20 15:08:21 by hbasheer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,7 @@ void	sorted(t_list *a, t_list *c)
 		else
 			return ;
 	}
-	ft_free_array(temp);
-	ft_free_array(temp1);
-	exit(1);
+	ft_free_stack(temp);
+	ft_free_stack(temp1);
+	exit(0);
 }

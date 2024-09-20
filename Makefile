@@ -1,8 +1,9 @@
 NAME = push_swap
 
-SRCS = ft_bzero.c ft_lst.c ft_split.c moves.c push_swap_utils.c \
-       push_swap_utils2.c error.c ft_calloc.c ft_memcpy.c main.c \
-       push_swap_utils1.c radix_sort.c other_sort.c moves2.c
+SRCS = push_swap_utils1.c error.c push_swap_utils2.c \
+       push_swap_utils3.c radix_sort.c other_sort.c \
+	   ft_lst.c moves.c push_swap_utils.c main.c \
+	   push_swap_utils4.c moves2.c
 
 OBJS = $(SRCS:.c=.o)
 

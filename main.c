@@ -6,7 +6,7 @@
 /*   By: hbasheer <hbasheer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/17 16:39:17 by hbasheer          #+#    #+#             */
-/*   Updated: 2024/09/18 11:13:39 by hbasheer         ###   ########.fr       */
+/*   Updated: 2024/09/20 15:10:10 by hbasheer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,8 +22,8 @@ int	main(int ac, char **av)
 	a = NULL;
 	b = NULL;
 	if (ac == 1)
-		exit(1);
-	if (av[1] == NULL || !check_arg(av))
+		exit(0);
+	if (!check_arg(av))
 		ft_error();
 	create_stack(&a, av);
 	check_dup(a);
@@ -31,6 +31,6 @@ int	main(int ac, char **av)
 	sort_clone(clone);
 	sorted(a, clone);
 	set_index(a, clone);
-	ft_free_array(clone);
+	ft_free_stack(clone);
 	sort(a, b);
 }

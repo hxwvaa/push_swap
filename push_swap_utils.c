@@ -6,7 +6,7 @@
 /*   By: hbasheer <hbasheer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/17 16:39:06 by hbasheer          #+#    #+#             */
-/*   Updated: 2024/09/19 13:53:24 by hbasheer         ###   ########.fr       */
+/*   Updated: 2024/09/20 15:05:35 by hbasheer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -100,7 +100,7 @@ void	check_dup(t_list *s)
 		{
 			if (s->content == temp->content)
 			{
-				ft_free_array(orig);
+				ft_free_stack(orig);
 				ft_error();
 			}
 			temp = temp->next;
