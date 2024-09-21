@@ -6,7 +6,7 @@
 /*   By: hbasheer <hbasheer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/20 15:01:02 by hbasheer          #+#    #+#             */
-/*   Updated: 2024/09/20 15:01:03 by hbasheer         ###   ########.fr       */
+/*   Updated: 2024/09/21 12:50:22 by hbasheer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,6 @@ void	*ft_memcpy(void *dest, const void *src, size_t n)
 	}
 	return (dest);
 }
-
 
 void	ft_bzero(void *s, size_t n)
 {
@@ -60,4 +59,3 @@ void	*ft_calloc(size_t nmemb, size_t size)
 	ft_bzero(s, total);
 	return (s);
 }
-
